@@ -103,7 +103,7 @@ export default function Index() {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-tangerine to-warmOrange hover:from-warmOrange hover:to-tangerine text-lg px-8 py-4"
-              onClick={() => setShowQuiz(true)}
+              onClick={() => window.location.href = '/olympiad/математика/grade1'}
             >
               <Icon name="Play" className="mr-2 h-5 w-5" />
               Попробовать олимпиаду
@@ -242,7 +242,14 @@ export default function Index() {
                             <span>Вопросов: 15-20</span>
                             <span>Время: 30 мин</span>
                           </div>
-                          <Button className="w-full bg-gradient-to-r from-tangerine to-warmOrange hover:from-warmOrange hover:to-tangerine">
+                          <Button 
+                            className="w-full bg-gradient-to-r from-tangerine to-warmOrange hover:from-warmOrange hover:to-tangerine"
+                            onClick={() => {
+                              const gradeKey = selectedGrade;
+                              const subjectKey = subject.name.toLowerCase().replace(/\s+/g, '-');
+                              window.location.href = `/olympiad/${subjectKey}/${gradeKey}`;
+                            }}
+                          >
                             <Icon name="Play" className="mr-2 h-4 w-4" />
                             Начать олимпиаду
                           </Button>
