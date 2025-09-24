@@ -67,7 +67,10 @@ export default function Index() {
               <a href="#about" className="text-darkBlue hover:text-tangerine transition-colors">О нас</a>
               <a href="#faq" className="text-darkBlue hover:text-tangerine transition-colors">FAQ</a>
               <a href="#contacts" className="text-darkBlue hover:text-tangerine transition-colors">Контакты</a>
-              <Button className="bg-gradient-to-r from-tangerine to-warmOrange hover:from-warmOrange hover:to-tangerine">
+              <Button 
+                className="bg-gradient-to-r from-tangerine to-warmOrange hover:from-warmOrange hover:to-tangerine"
+                onClick={() => window.location.href = '/dashboard'}
+              >
                 Войти
               </Button>
             </nav>
@@ -109,6 +112,7 @@ export default function Index() {
               size="lg" 
               variant="outline" 
               className="border-2 border-tangerine text-tangerine hover:bg-tangerine hover:text-white text-lg px-8 py-4"
+              onClick={() => window.location.href = '/register'}
             >
               <Icon name="UserPlus" className="mr-2 h-5 w-5" />
               Зарегистрироваться
